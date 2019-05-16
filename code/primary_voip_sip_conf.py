@@ -1,4 +1,5 @@
 import mysql.connector
+import os
 print("trying")
 cnx = mysql.connector.connect(user='primary_test', password='test_password', host='10.0.0.10', port='3306', database='Authentication')
 print("done")
