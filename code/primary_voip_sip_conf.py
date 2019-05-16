@@ -61,3 +61,5 @@ f.write(base_setup)
 for x in sip_list:
         f.write(x)
 f.close
+asterisk_restart="sudo systemctl restart asterisk"
+os.system(asterisk_restart)
