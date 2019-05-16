@@ -21,7 +21,7 @@ for x in collect:
 
 
 base_setup="""
-{general]
+[general]
 alwaysauthreject=yes
 videosupport=yes
 disallow=all
@@ -48,14 +48,15 @@ for x in refined:
         exten="""
 ["""+x[3]+"""]
 type=friend
-callerid="""+x[1]+"""
+callerid="""+'"'+x[1]+'"'+"""
 secret="""+x[2]+"""
 host=dynamic
-context=LocalExt"""
+context=LocalExt
+"""
         sip_list.append(exten)
 for x in sip_list:
         print(x)
-f = open("extensions.conf","w+")
+f = open("/etc/asterisk/sip.conf","w+")
 f.write(base_setup)
 for x in sip_list:
         f.write(x)
