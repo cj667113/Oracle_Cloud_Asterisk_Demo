@@ -61,6 +61,6 @@ f = open("/etc/asterisk/sip.conf","w+")
 f.write(base_setup)
 for x in sip_list:
         f.write(x)
-f.close
+f.close()
 asterisk_restart="sudo systemctl restart asterisk"
 os.system(asterisk_restart)
